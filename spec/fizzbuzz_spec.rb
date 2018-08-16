@@ -21,4 +21,43 @@ describe 'fizzbuzz' do
     expect(fizzbuzz(6)).to eq "fizz"
     expect(fizzbuzz(9)).to eq "fizz"
   end
+
+  it "returns 'buzz' when given multiple of 5" do
+    expect(fizzbuzz(10)).to eq "buzz"
+    expect(fizzbuzz(20)).to eq "buzz"
+    expect(fizzbuzz(25)).to eq "buzz"
+  end
+
+  it "returns 'fizzbuzz' when given multiples of 3 and 5" do
+    expect(fizzbuzz(15)).to eq "fizzbuzz"
+    expect(fizzbuzz(30)).to eq "fizzbuzz"
+    expect(fizzbuzz(45)).to eq "fizzbuzz"
+    expect(fizzbuzz(600)).to eq "fizzbuzz"
+    expect(fizzbuzz(3000)).to eq "fizzbuzz"
+  end
+
+  it "returns number when given number not multiple of 3 or 5" do
+    expect(fizzbuzz(7)).to eq 7
+    expect(fizzbuzz(28)).to eq 28
+    expect(fizzbuzz(613544)).to eq 613544
+    expect(fizzbuzz(0)).to eq 0
+  end
+
+  it "returns 'fizz' when given multiple of -3" do
+    expect(fizzbuzz(-3)).to eq 'fizz'
+    expect(fizzbuzz(-6)).to eq 'fizz'
+    expect(fizzbuzz(-9)).to eq 'fizz'
+  end
+
+  it "returns 'buzz' when given multiple of -5" do
+    expect(fizzbuzz(-10)).to eq 'buzz'
+    expect(fizzbuzz(-20)).to eq 'buzz'
+    expect(fizzbuzz(-25)).to eq 'buzz'
+  end
+
+  it "returns 'fizzbuzz' when given multiples of -3 and -5" do
+    expect(fizzbuzz(-15)).to eq 'fizzbuzz'
+    expect(fizzbuzz(-30)).to eq 'fizzbuzz'
+    expect(fizzbuzz(-150)).to eq 'fizzbuzz'
+  end
 end
