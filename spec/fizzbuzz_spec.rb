@@ -55,9 +55,39 @@ describe 'fizzbuzz' do
     expect(fizzbuzz(-25)).to eq 'buzz'
   end
 
-  it "returns 'fizzbuzz' when given multiples of -3 and -5" do
+  it "returns 'fizzbuzz' when given negative multiples of 3 and 5" do
     expect(fizzbuzz(-15)).to eq 'fizzbuzz'
     expect(fizzbuzz(-30)).to eq 'fizzbuzz'
     expect(fizzbuzz(-150)).to eq 'fizzbuzz'
+  end
+
+  it "returns nil when given nil" do
+    expect(fizzbuzz(nil)).to eq nil
+  end
+
+  it "returns number when given 'number' as a string" do
+    expect(fizzbuzz("1")).to eq 1
+    expect(fizzbuzz("0")).to eq 0
+  end
+
+  it "returns 'fizz' when given multiple of '3' as a string" do
+    expect(fizzbuzz("3")).to eq "fizz"
+    expect(fizzbuzz("6")).to eq "fizz"
+    expect(fizzbuzz("72")).to eq "fizz"
+  end
+
+  it "returns nil when given input that cannot be coerced into an integer" do
+    expect(fizzbuzz("gibberish")).to eq nil
+    expect(fizzbuzz(Class.new)).to eq nil
+    expect(fizzbuzz([])).to eq nil
+  end
+
+  it "returns 'fizz' when passed 3.0" do
+    expect(fizzbuzz(3.0)).to eq "fizz"
+  end
+
+  it "returns float when passed float" do
+    expect(fizzbuzz(1.0)).to eq 1.0
+    expect(fizzbuzz(1.5)).to eq 1.5
   end
 end
